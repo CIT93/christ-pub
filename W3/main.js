@@ -23,15 +23,31 @@ console.log(`Based on the number of members of the household of ${numberInHouseh
 
 }
 
-let carbonFootprintPoints = 0;
+function determineHouseSize(houseSize) {
+    if (houseSize = ("Large House")) {
+        housePoints = housePoints + 10;
+    } else if(houseSize = ("Medium House")) {
+        housePoints = housePoints + 7;
+    } else if(houseSize = ("Small House")) {
+        housePoints = housePoints + 4;
+    } else if(houseSize = ("Apartment")) {
+        housePoints = housePoints + 2;
+    }
+
+    console.log(`Based on the house size of a ${houseSize} the points would be ${housePoints}`);
+}
+
+let housePoints = 0;
+let carbonFootprintPoints = 0; 
 //const numberInHousehold = 5;
 
 
 //global scope
 
 determineHousePoints(3);
-determineHousePoints(5);
+determineHouseSize("Large House");
+
+console.log(`The total amount of points is ${housePoints + carbonFootprintPoints}`);
 
 
-
-
+// MY CODE WORKS!
