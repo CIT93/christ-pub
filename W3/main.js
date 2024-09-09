@@ -23,14 +23,14 @@ console.log(`Based on the number of members of the household of ${numberInHouseh
 
 }
 
-function determineHouseSize(houseSize) {
-    if (houseSize = ("Large House")) {
+function determineHouseSizePts(houseSize) {
+    if (houseSize === 'Large House') {
         housePoints = housePoints + 10;
-    } else if(houseSize = ("Medium House")) {
+    } else if(houseSize === 'Medium House') {
         housePoints = housePoints + 7;
-    } else if(houseSize = ("Small House")) {
+    } else if(houseSize === 'Small House') {
         housePoints = housePoints + 4;
-    } else if(houseSize = ("Apartment")) {
+    } else if(houseSize === 'Apartment') {
         housePoints = housePoints + 2;
     }
 
@@ -44,8 +44,8 @@ let carbonFootprintPoints = 0;
 
 //global scope
 
-determineHousePoints(3);
-determineHouseSize("Large House");
+determineHousePoints(5);
+determineHouseSizePts("Medium House");
 
 console.log(`The total amount of points is ${housePoints + carbonFootprintPoints}`);
 
