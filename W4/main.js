@@ -54,21 +54,16 @@ function start(houseHoldMembers, houseSize2){
 
 function displayOutput() {
     for (arr of cpfData){
-        console.log(arr)
         const output = document.getElementById("output");
+        const newH2 = document.createElement ("h2");
+        newH2.textContent = `Carbon Footprint ${arr[4]}`;
+        const newH3 = document.createElement("h3");
+        newH3.textContent = 'Based on the size of the home'
         const newP = document.createElement("p");
-        newP.textContent = `Carbon Footpring total is ${arr[4]}`;
-        newP.textContent = `Appartment type is ${arr[1]}`;
-        output.appendChild(newP);
-    }
-}
-
-function displayOutputHouse() {
-    for (arr of cpfData){
-        console.log(arr)
-        const output = document.getElementById("output2");
-        const newP = document.createElement("P");
-        newP.textContent = `Appartment type is ${arr[1]}`;
+        newP.textContent = `This number is based on the number of people in the house of ${arr[0]} (score: ${arr[3]}).`
+        newP.textContent += ` and a ${arr[1]} size of home (score:${arr[2]}).`
+        output.appendChild(newH2);
+        output.appendChild(newH3);
         output.appendChild(newP);
     }
 }
@@ -76,6 +71,7 @@ function displayOutputHouse() {
 
 start(5, "Apartment");
 start(1, "Large House");
+start(10, "Small House")
 
 displayOutput()
 
