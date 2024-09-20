@@ -44,12 +44,15 @@ function determineHouseSizePts(houseSize) {
 
     return housePoints;
 }
-function start(houseHoldMembers, houseSize2){
+function start(firstName, lastName, houseHoldMembers, houseSize2){
     const houseHoldPts = determineHousePoints(houseHoldMembers);
     const houseSizePts = determineHouseSizePts(houseSize2);
     const totalPoints = houseHoldPts + houseSizePts;
     
-    cpfData.push({houseHold: houseHoldMembers,
+    cpfData.push({
+        firstN: firstName,
+        lastN: lastName,
+        houseHold: houseHoldMembers,
         houseS2: houseSize2,
         housePts: houseHoldPts,
         houseSpts: houseSizePts,
@@ -67,7 +70,7 @@ function displayOutput() {
         newH2.textContent = `Carbon Footprint ${obj.houseTtl}`;
         
         const newH3 = document.createElement("h3");
-        newH3.textContent = 'Based on the size of the home';
+        newH3.textContent = `Hello ${obj.firstN} ${obj.lastN} !`;
         
         const newP = document.createElement("p");
         newP.textContent = `This number is based on the number of people in the house of ${obj.houseHold} (score: ${obj.housePts}).`;
@@ -88,7 +91,7 @@ form.addEventListener('submit', function(e){
     const lastName = form.lastname.value;
     const houseSize2 = form.size.value;
     const houseHoldMembers = parseInt(form.members.value);
-    start(houseHoldMembers, houseSize2);
+    start(firstName, lastName, houseHoldMembers, houseSize2);
     OUTPUT.innerHTML = "";
     displayOutput();
     form.reset();

@@ -27,14 +27,14 @@
 <body>
     <form id="form">
         <fieldset>
-            <legend>Input Carbon Footprint</legend>
+            <legend>Carbon Footprint Calculator</legend>
             <div>
                 <label for="">First Name:</label>
-                <input type="text" name="firstname" required/>
+                <input type="text" name="firstname" maxlength="20" required/>
             </div>
             <div>
                 <label for="">Last Name:</label>
-                <input type="text" name="lastname" required/>
+                <input type="text" name="lastname" maxlength="20" required/>
             </div>
             <div>
                 <label for="">Consider the Size of your House</label>
@@ -49,7 +49,7 @@
             </div>
             <div>
                 <label for="">Count the Members of your Household</label>
-                <input type="number" name="members" min="1" max="8" required/>
+                <input type="number" name="members" min="1" max="6" required/>
             </div>
             <button type="submit">Submit</button>
         </fieldset>
