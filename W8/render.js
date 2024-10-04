@@ -29,9 +29,13 @@ function renderTblBtn(index, data){
         console.log(e);
         data.splice(index, 1);
         renderTbl(data);
+        renderTblHeading();
     })
     btnEdit.addEventListener('click', function(e){
-        
+        console.log('Hello from inside the edit button');
+        console.log(e);
+        const form = document.getElementById("form");
+        form[index];
     })
     return td;
 }
