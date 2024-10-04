@@ -32,10 +32,13 @@ function renderTblBtn(index, data){
         renderTblHeading();
     })
     btnEdit.addEventListener('click', function(e){
-        console.log('Hello from inside the edit button');
-        console.log(e);
-        const form = document.getElementById("form");
-        form[index];
+        const rowData = data[index]; 
+        form.firstname.value = rowData.firstObj; 
+        form.lastname.value = rowData.lastObj;
+        form.size.value = rowData.houseSize2Obj;
+        form.members.value = rowData.houseHouldMembersObj;
+        data.splice(index, 1); 
+        renderTbl(data); 
     })
     return td;
 }
