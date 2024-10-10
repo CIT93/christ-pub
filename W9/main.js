@@ -55,8 +55,8 @@ document.getElementById('form').addEventListener('submit', function (event) {
 
 form.addEventListener('submit', function(e){
     e.preventDefault();
-    const firstName = form.firstname.value;
-    const lastName = form.lastname.value;
+    const firstName = form.firstName.value;
+    const lastName = form.lastName.value;
     const houseSize2 = form.size.value;
     const houseHoldMembers = parseInt(form.members.value);
     start(firstName, lastName, houseHoldMembers, houseSize2);
