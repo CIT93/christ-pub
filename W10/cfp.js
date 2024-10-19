@@ -1,6 +1,6 @@
 const cpfData = [];
 
-const determineHousePoints = function (numberInHousehold)  {
+const determineHousePoints = numberInHousehold => {
 
     let houseHoldPoints = 0;
 
@@ -25,7 +25,7 @@ const determineHousePoints = function (numberInHousehold)  {
     return houseHoldPoints;
 }
 
-const determineHouseSizePts = function (houseSize) {
+const determineHouseSizePts = houseSize => {
 
     let housePoints = 0;
 

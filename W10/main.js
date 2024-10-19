@@ -6,7 +6,7 @@ import { saveLS, cpfData } from "./storage.js";
 
 
 
-const start = function(first, last, houseHoldMembers, houseSize2){
+const start = (first, last, houseHoldMembers, houseSize2) => {
     const houseHoldPts = determineHousePoints(houseHoldMembers);
     const houseSizePts = determineHouseSizePts(houseSize2);
     const totalPoints = houseHoldPts + houseSizePts;
@@ -24,7 +24,7 @@ const start = function(first, last, houseHoldMembers, houseSize2){
 
 renderTbl(cpfData);
 
-const validateField = function(event) {
+const validateField = event => {
     const field = event.target.value;
     const fieldId = event.target.id;
     const fieldError = document.getElementById(`${fieldId}Error`);
@@ -43,7 +43,7 @@ fName.addEventListener('blur', validateField);
 lName.addEventListener('blur', validateField);
 
 
-form.addEventListener('submit', function(e){
+form.addEventListener('submit', e =>{
     e.preventDefault();
     if (fName.value !== '' && lName.value !== '') {
         // const houseSize2 = form.size.value;
@@ -58,13 +58,20 @@ form.addEventListener('submit', function(e){
     
 });
 
+//rest operator
+// const add2 = function(a = 10) {
+//     return 2 + a[3];
+// }
 
-const add2 = function(a = 10) {
-    return 2 + a[3];
-}
+// const  result = add2(1, 2, 3, 4);
 
-const  result = add2(1, 2, 3, 4);
+//arrow function
+const add2 = a  => 2 + a;
 
+
+const  result = add2(100);
+
+//IIFE
 (function(a) {
     console.log("inside IIFE");
     console.log(a);
