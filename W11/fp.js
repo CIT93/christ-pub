@@ -1,11 +1,11 @@
 class FP {
     constructor(first, last, houseMembers, houseSize, houseFood, housePackage) {
-        this.first = first
-        this.last = last
-        this.houseMembers = houseMembers
-        this.houseSize = houseSize
-        this.houseFood = houseFood
-        this.housePackage = housePackage
+        this.first = first;
+        this.last = last;
+        this.houseMembers = houseMembers;
+        this.houseSize = houseSize;
+        this.houseFood = houseFood;
+        this.housePackage = housePackage;
         this.houseHoldPoints();
         this.houseSizePoints();
         this.houseFoodPoints();
@@ -52,11 +52,12 @@ class FP {
     } else if(this.houseFood === 'VEGAN') {
         this.houseFoodPoints = 2;
     }
+    }
 
     housePackagePoints() {
         if (this.housePackage === 'DMD') {
         this.housePackagePoints = 10;
-    } else if(this.housePackage === 'DMF') {
+    } else if(this.housePackage === 'DMF') {    
         this.housePackagePoints = 8;
     } else if(this.housePackage === 'VEG') {
         this.housePackagePoints = 4;
@@ -71,6 +72,5 @@ class FP {
         this.total = this.houseHoldPoints + this.houseSizePoints + this.houseFoodPoints + this.housePackagePoints;
         }
     }
-}
 
 export {FP}
