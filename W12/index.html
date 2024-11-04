@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="main.js"></script>
+    <title>W12 Async</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="form">
+        <fieldset>
+            <legend>Workout Helper</legend>
+            <div>
+                <label>Type of Workout</label>
+                <input type="text" id="workoutType"/>
+            </div>
+            <div>
+                <label>Reps</label>
+                <input type="text" id="reps"/>
+            </div>
+            <div>
+                <label>Workout Time (mins)</label>
+                <input type="text" id="workoutTime"/>
+            </div>
+            <div>
+                <label>Push Your Limit?</label>
+                <select name="limit" id="limit" required>
+                    <option value="">---Please Select An Option---</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+
+    <div id="output"></div>
+
+</body>
+</html>
