@@ -1,8 +1,8 @@
 function renderPhotos(photos) {
-photos.forEach((ing) => {
+photos.forEach((img) => {
     const imgEl = document.createElement("img");
     imgEl.setAttribute("src", img.thumbnailUrl);
-    document.getElementsById("output").appendChild(imgEl);
+    document.getElementById("output").appendChild(imgEl);
     })
 }
 
@@ -16,7 +16,7 @@ async function getPhotos() {
             onSuccess(photos)
         }
     } catch (error) {
-        onerror(error);
+        onError(error);
     }
 }
 
