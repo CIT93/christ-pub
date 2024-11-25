@@ -52,7 +52,7 @@ const renderTblBody = data => {
     const tbody = document.createElement("tbody");
     data.forEach((obj, index) =>{
         const tr = document.createElement("tr");
-        const keys = ["first", "houseMembers", "houseSize", "foodChoice","foodPackaging", "total"]
+        const keys = ["first", "houseMembers", "houseSize", "houseFood","housePackage", "total"]
         keys.forEach(key =>{
             const td = document.createElement("td");
                 td.textContent = obj[key];
@@ -71,8 +71,32 @@ const renderTbl = data => {
         const table = renderTblHeading();
         const tbody = renderTblBody(data);
         table.appendChild(tbody);
+
+         // Calculate the average of the "total" footprint values
+         const average = calculateAverage(data);
+
+         // Add a new row for the average at the bottom of the table
+         const averageRow = document.createElement("tr");
+         const averageCell = document.createElement("td");
+         averageCell.colSpan = 6;  // Span across all columns except "Actions"
+         averageCell.textContent = `Average Footprint: ${average}`;
+         averageRow.appendChild(averageCell);
+ 
+         // Append an empty cell for the "Actions" column
+         const actionsCell = document.createElement("td");
+         averageRow.appendChild(actionsCell);
+ 
+         // Append the average row to the table
+         table.appendChild(averageRow);
+
         TBL.appendChild(table);
     }
 }
+
+const calculateAverage = (data) => {
+    const totalSum = data.reduce((sum, entry) => sum + entry.total, 0);
+    const average = totalSum / data.length;
+    return average.toFixed(2);  // Format to 2 decimal place
+};
 
 export {renderTbl};

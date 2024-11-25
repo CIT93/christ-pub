@@ -47,10 +47,7 @@ lName.addEventListener('blur', validateField);
 form.addEventListener('submit', e =>{
     e.preventDefault();
     if (fName.value !== '' && lName.value !== '') {
-        // start(fName.value, lName.value, parseInt(form.members.value), form.size.value);
-        const fpObj = new FP(fName.value, lName.value, parseInt(form.members.value), form.size.value);
-        // fpObj.houseHoldPoints();
-        // fpObj.houseSizePoints();
+        const fpObj = new FP(fName.value, lName.value, parseInt(form.members.value), form.size.value, form.foodChoice.value, form.foodPackaging.value);
         cpfData.push(fpObj);
         saveLS(cpfData);
         renderTbl(cpfData);
@@ -60,4 +57,3 @@ form.addEventListener('submit', e =>{
     }
     
 });
-

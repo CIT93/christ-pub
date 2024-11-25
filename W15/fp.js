@@ -27,9 +27,7 @@ class FP {
                 this.houseHoldPoints = 4;
             } else if (this.houseMembers > 6) {
                 this.houseHoldPoints = 2;
-            } else {
-        console.log("no points updated");
-        }
+            }
     }
     houseSizePoints(){
         if (this.houseSize === 'Large House') {
@@ -55,13 +53,11 @@ class FP {
     }
 
     housePackagePoints() {
-        if (this.housePackage === 'DMD') {
-        this.housePackagePoints = 10;
-    } else if(this.housePackage === 'DMF') {    
-        this.housePackagePoints = 8;
-    } else if(this.housePackage === 'VEG') {
-        this.housePackagePoints = 4;
-    } else if(this.housePackage === 'VEGAN') {
+        if (this.housePackage === 'Prep') {
+        this.housePackagePoints = 12;
+    } else if(this.housePackage === 'Half') {    
+        this.housePackagePoints = 6;
+    } else if(this.housePackage === 'Fresh') {
         this.housePackagePoints = 2;
     }
     }

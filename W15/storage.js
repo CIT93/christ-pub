@@ -4,7 +4,7 @@ const saveLS= function(cpfData){
     localStorage.setItem("cfp", serializedArr);
 }
 
-const getLS = function(cpfData){
+const getLS = function(){
     const retrievedArr = localStorage.getItem("cpf");
     if (retrievedArr !== null){
         return JSON.parse(retrievedArr);
