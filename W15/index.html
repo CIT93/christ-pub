@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="main.js"></script>
+    <title>Week 15 Carbon Footprint</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form id="form">
+        <fieldset>
+            <legend>Input Carbon Footprint</legend>
+            <div>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" />
+                <span id="firstNameError" class="error" role="alert"></span>
+            </div>
+            <div>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" />
+                <span id="lastNameError" class="error" role="alert"></span>
+            </div>
+            <div>
+                <label for="">Consider the Size of your House</label>
+                <select name="size" required>
+                    <option value="">---Please Enter Size of Home---</option>
+                    <option value="Apartment">Apartment</option>
+                    <option value="Small House">Small</option>
+                    <option value="Medium House">Medium</option>
+                    <option value="Large House">Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Count the Members of your Household</label>
+                <input type="number" name="members" min="1" max="8" required />
+            </div>
+            <div>
+                <label for="">Consider Your Diet</label>
+                <select name="size" required>
+                    <option value="">---Please Enter Your Diet---</option>
+                    <option value="DMD">Domestic Meat Daily</option>
+                    <option value="DMF">Domestic Meat Few times a Week</option>
+                    <option value="VEG">Vegitarian</option>
+                    <option value="VEGAN">Vegan or only Wild Meat</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Consider Your Food Packaging</label>
+                <select name="size" required>
+                    <option value="">---Please Enter Your Food Packaging---</option>
+                    <option value="Prep">Prepackaged</option>
+                    <option value="Half">Half Fresh Half Prepackaged</option>
+                    <option value="Fresh">Fresh and Locally Grown</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </fieldset>
+
+    </form>
+    <div id="output"></div>
+    <div id="tab-data"></div>
+    <table>
+
+    </table>
+</body>
+
+</html>
