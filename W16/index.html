@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="main.js"></script>
+    <title>Week 16 Carbon Footprint</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form id="form">
+        <fieldset>
+            <legend>Input Carbon Footprint</legend>
+            <div>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" />
+                <span id="firstNameError" class="error" role="alert"></span>
+            </div>
+            <div>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" />
+                <span id="lastNameError" class="error" role="alert"></span>
+            </div>
+            <div>
+                <label for="">Consider the Size of your House</label>
+                <select name="size" required>
+                    <option value="">---Please Enter Size of Home---</option>
+                    <option value="Apartment">Apartment</option>
+                    <option value="Small House">Small</option>
+                    <option value="Medium House">Medium</option>
+                    <option value="Large House">Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Count the Members of your Household</label>
+                <input type="number" name="members" min="1" max="8" required />
+            </div>
+            <div>
+                <label for="">Consider Your Diet</label>
+                <select name="foodChoice" required>
+                    <option value="">---Please Enter Your Diet---</option>
+                    <option value="DMD">Domestic Meat Daily</option>
+                    <option value="DMF">Domestic Meat Few times a Week</option>
+                    <option value="VEG">Vegitarian</option>
+                    <option value="VEGAN">Vegan or only Wild Meat</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Consider Your Food Packaging</label>
+                <select name="foodPackaging" required>
+                    <option value="">---Please Enter Your Food Packaging---</option>
+                    <option value="Prep">Prepackaged</option>
+                    <option value="Half">Half Fresh Half Prepackaged</option>
+                    <option value="Fresh">Fresh and Locally Grown</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Examine your Water Consumption</label>
+                <select name="waterComsumption" required>
+                    <option value="">---Please Enter Your Water Consumption---</option>
+                    <option value="greaterThan">Dishwasher more than 9 times a week</option>
+                    <option value="betweenMid">Dishwasher between 4 to 9 times a week</option>
+                    <option value="betweenLow">Dishwasher between 1 to 3 times a week</option>
+                    <option value="dishwasherNone">You do not have one</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Examine your Water Consumption</label>
+                <select name="waterComsumption2" required>
+                    <option value="">---Please Enter Your Water Consumption---</option>
+                    <option value="greaterThan2">Washing Machine more than 9 times a week</option>
+                    <option value="betweenMid2">Washing Machine between 4 to 9 times a week</option>
+                    <option value="betweenLow2">Washing Machine between 1 to 3 times a week</option>
+                    <option value="washingmachineNone">You do not have one</option>
+                </select>
+            </div>
+            <button type="submit" id="submitError">Submit</button>
+        </fieldset>
+
+    </form>
+    <div id="output"></div>
+    <div id="tab-data"></div>
+    <table>
+
+    </table>
+</body>
+
+</html>
