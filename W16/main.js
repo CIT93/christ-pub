@@ -57,4 +57,5 @@ form.addEventListener('submit', e =>{
     }
     
 });
-//Code for the edit was already working with that last commit
+//My Code for the second half of the water consumption was already coded
+//:)
