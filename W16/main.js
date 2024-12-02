@@ -47,7 +47,7 @@ lName.addEventListener('blur', validateField);
 form.addEventListener('submit', e =>{
     e.preventDefault();
     if (fName.value !== '' && lName.value !== '') {
-        const fpObj = new FP(fName.value, lName.value, parseInt(form.members.value), form.size.value, form.foodChoice.value, form.foodPackaging.value, form.waterComsumption.value, form.waterComsumption2.value);
+        const fpObj = new FP(fName.value, lName.value, parseInt(form.members.value), form.size.value, form.foodChoice.value, form.foodPackaging.value, form.waterComsumption.value, form.waterComsumption2.value, form.familyPurchase.value);
         cpfData.push(fpObj);
         saveLS(cpfData);
         renderTbl(cpfData);

@@ -5,7 +5,7 @@ const renderTblHeading = () => {
     const table = document.createElement("table");
     const thead = document.createElement("thead");
     const tr = document.createElement("tr");
-    const headingTextArr = ["Name","Household", "HouseSize", "FoodChoice", "FoodPackaging", "Dishwasher Usage", "Washing Machine Usage", "Footprint", "Actions"];
+    const headingTextArr = ["Name","Household", "HouseSize", "FoodChoice", "FoodPackaging", "Dishwasher Usage", "Washing Machine Usage","Household Purchases", "Footprint", "Actions"];
     headingTextArr.forEach(function(text){
         const th = document.createElement("th");
         th.textContent = text;
@@ -43,6 +43,7 @@ const renderTblBtn = (obj, index, data) => {
         form[6].value = obj.housePackage
         form[7].value = obj.dishWasher
         form[8].value = obj.washingMachine
+        form[9].value = obj.makePurchases
 
 
         onUpdate(index, data);
@@ -54,7 +55,7 @@ const renderTblBody = data => {
     const tbody = document.createElement("tbody");
     data.forEach((obj, index) =>{
         const tr = document.createElement("tr");
-        const keys = ["first", "houseMembers", "houseSize", "houseFood","housePackage", "dishWasher", "washingMachine", "total"]
+        const keys = ["first", "houseMembers", "houseSize", "houseFood","housePackage", "dishWasher", "washingMachine", "makePurchases", "total"]
         keys.forEach(key =>{
             const td = document.createElement("td");
                 td.textContent = obj[key];
@@ -80,7 +81,7 @@ const renderTbl = data => {
          // Add a new row for the average at the bottom of the table
          const averageRow = document.createElement("tr");
          const averageCell = document.createElement("td");
-         averageCell.colSpan = 8;  // Span across all columns except "Actions"
+         averageCell.colSpan = 9;  // Span across all columns except "Actions"
          averageCell.textContent = `Average Footprint: ${average}`;
          averageRow.appendChild(averageCell);
  

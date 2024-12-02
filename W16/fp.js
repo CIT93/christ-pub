@@ -1,5 +1,5 @@
 class FP {
-    constructor(first, last, houseMembers, houseSize, houseFood, housePackage, dishWasher, washingMachine) {
+    constructor(first, last, houseMembers, houseSize, houseFood, housePackage, dishWasher, washingMachine, makePurchases) {
         this.first = first;
         this.last = last;
         this.houseMembers = houseMembers;
@@ -8,12 +8,14 @@ class FP {
         this.housePackage = housePackage;
         this.dishWasher = dishWasher;
         this.washingMachine = washingMachine;
+        this.makePurchases = makePurchases;
         this.houseHoldPoints();
         this.houseSizePoints();
         this.houseFoodPoints();
         this.housePackagePoints();
         this.dishwasherPoints();
         this.washingMachinePoints();
+        this.madePurchasesPoints();
         this.total();
     }
     houseHoldPoints(){
@@ -88,11 +90,24 @@ class FP {
             this.washingMachinePoints = 0;
         }
     }
+    madePurchasesPoints() {
+        if(this.makePurchases === 'moreThan7') {
+            this.madePurchasesPoints = 10;
+        } else if(this.makePurchases === 'between5And7') {
+            this.madePurchasesPoints = 8;
+        } else if(this.makePurchases === 'between3And5') {
+            this.madePurchasesPoints = 6;
+        } else if(this.makePurchases === 'lessThan3') {
+            this.madePurchasesPoints = 4;
+        } else if(this.makePurchases === 'secondhandOnly') {
+            this.madePurchasesPoints = 2;
+        }
+    }
 
 
 
     total() {
-        this.total = this.houseHoldPoints + this.houseSizePoints + this.houseFoodPoints + this.housePackagePoints + this.dishwasherPoints + this.washingMachinePoints;
+        this.total = this.houseHoldPoints + this.houseSizePoints + this.houseFoodPoints + this.housePackagePoints + this.dishwasherPoints + this.washingMachinePoints + this.madePurchasesPoints;
 
         console.log(`Computed total: ${this.total}`); // Debugging line
     return this.total; // Ensure `this.total` is assigned
