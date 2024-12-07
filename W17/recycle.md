@@ -1,0 +1,1 @@
+My idea for adding recycling is to add it to the FP class like normal but when putting into the total function subtract it instead of addition.
