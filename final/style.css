@@ -1,0 +1,53 @@
+html {
+    font-size: 26px
+}
+h1 {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f3f3f3;
+  }
+  form {
+    max-width: 400px;
+    margin: 20px auto;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  input:in-range {
+    background-color: lightgreen;
+}
+input:out-of-range {
+    background-color: lightcoral;
+}
+table, th, td {
+    border: 1px solid;
+    padding: 5px;
+    text-align: center;
+    
+}
+tbody tr:nth-child(odd) {
+    background-color: forestgreen;
+
+}
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0077ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #00aeff;
+  }

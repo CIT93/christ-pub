@@ -50,7 +50,10 @@ form.addEventListener('submit', e =>{
         e.target.waterConsumption.value, 
         e.target.waterConsumption2.value, 
         e.target.familyPurchase.value, 
-        e.target.wasteProduct.value, 
+        e.target.wasteProduct.value,
+        e.target.personalVehicle.value,
+        e.target.publicTransportation.value,
+        e.target.flights.value,
         determineRecycleItems(e)
     );
         cpfData.push(fpObj);

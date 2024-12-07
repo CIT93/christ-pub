@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="main.js"></script>
+    <title>Final Step!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Sleep</h1>
+        <form id ="form">
+            <fieldset>
+                <legend>Sleep Calculator</legend>
+                <div>
+                    <label>Hours of Sleep</label>
+                    <input type="number" id="hoursSleep" min="1" max="24" required/>
+                </div>
+                <div>
+                    <label>Quality of Sleep</label>
+                    <select id="qualitySleep">
+                        <option value="">---Please Enter Sleep Quality---</option>
+                        <option value="Horrible">Horrible</option>
+                        <option value="Bad">Bad</option>
+                        <option value="Meh">Meh</option>
+                        <option value="Okay">OKay</option>
+                        <option value="Alright">Alright</option>
+                        <option value="Good">Good</option>
+                        <option value="Great">Great</option>
+                        <option value="Excellent">Excellent</option>
+                    </select>
+                </div>
+                <div>
+                    <label>What Day of the Week is it?</label>
+                    <select id="currentDay">
+                        <option value="">---Please Enter Day---</option>
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                        <option value="Sunday">Sunday</option>
+                    </select>
+                </div>
+                <button type="submit">Submit</button>
+            </fieldset>
+        </form>
+        <div id="output"></div>
+        <div id="tab-data"></div>
+
+</body>
+</html>

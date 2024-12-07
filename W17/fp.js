@@ -1,5 +1,5 @@
 class FP {
-    constructor(first, last, houseMembers, houseSize, houseFood, housePackage, dishWasher, washingMachine, makePurchases, producingWaste, recycle) {
+    constructor(first, last, houseMembers, houseSize, houseFood, housePackage, dishWasher, washingMachine, makePurchases, producingWaste, personalTrans, publicTrans, planeDistance, recycle, ) {
         this.first = first;
         this.last = last;
         this.houseMembers = houseMembers;
@@ -11,6 +11,9 @@ class FP {
         this.makePurchases = makePurchases;
         this.producingWaste = producingWaste;
         this.recycle = recycle;
+        this.personalTrans = personalTrans;
+        this.publicTrans = publicTrans;
+        this.planeDistance = planeDistance
         this.houseHoldPoints();
         this.houseSizePoints();
         this.houseFoodPoints();
@@ -19,6 +22,9 @@ class FP {
         this.washingMachinePoints();
         this.madePurchasesPoints();
         this.wasteProductionPoints();
+        this.personalMilesPoints();
+        this.publicMilesPoints();
+        this.planeMilesPoints();
         this.total();
     }
     houseHoldPoints(){
@@ -119,21 +125,67 @@ class FP {
             this.wasteProductionPoints = 5;
         }
     }
+
+    personalMilesPoints() {
+        if(this.personalTrans >= 15000 ) {
+            this.personalMilesPoints = 12
+        } else if (this.personalTrans < 15000 && this.personalTrans >= 10000) {
+            this.personalMilesPoints = 10
+        } else if (this.personalTrans < 10000 && this.personalTrans >= 1000) {
+            this.personalMilesPoints = 6
+        } else if (this.personalTrans < 1000 && this.personalTrans >= 1) {
+            this.personalMilesPoints = 4
+        } else if (this.personalTrans === 0) {
+            this.personalMilesPoints = 0
+        }
+    }
+    publicMilesPoints() {
+        if(this.publicTrans >= 20000 ) {
+            this.publicMilesPoints = 12
+        } else if (this.publicTrans < 20000 && this.publicTrans >= 15000) {
+            this.publicMilesPoints = 10
+        } else if (this.publicTrans < 15000 && this.publicTrans >= 10000) {
+            this.publicMilesPoints = 6
+        } else if (this.publicTrans < 10000 && this.publicTrans >= 1000) {
+            this.publicMilesPoints = 4
+        } else if (this.publicTrans < 1000 && this.publicTrans >= 1) {
+                this.publicMilesPoints = 2
+        } else if (this.publicTrans === 0) {
+            this.publicMilesPoints = 0
+        }
+    }
+    planeMilesPoints() {
+        if(this.planeDistance === "Within State" ) {
+            this.planeMilesPoints = 2
+        } else if(this.planeDistance === 'Nearby') {
+            this.planeMilesPoints = 6
+        } else if(this.planeDistance === "Another Continent") {
+            this.planeMilesPoints = 20
+        } else if(this.planeDistance === "Do Not Fly") {
+            this.planeMilesPoints = 0
+        }
+    }
+
+
+
     total() {
         this.total = 
-    (this.houseHoldPoints || 0) + 
-    (this.houseSizePoints || 0) + 
-    (this.houseFoodPoints || 0) + 
-    (this.housePackagePoints || 0) + 
-    (this.dishwasherPoints || 0) + 
-    (this.washingMachinePoints || 0) + 
-    (this.madePurchasesPoints || 0) + 
-    (this.wasteProductionPoints || 0) +
-    (this.recycle.recyclePoints || 0);
-
+            (this.houseHoldPoints || 0) + 
+            (this.houseSizePoints || 0) + 
+            (this.houseFoodPoints || 0) + 
+            (this.housePackagePoints || 0) + 
+            (this.dishwasherPoints || 0) + 
+            (this.washingMachinePoints || 0) + 
+            (this.madePurchasesPoints || 0) + 
+            (this.wasteProductionPoints || 0) +
+            (this.personalMilesPoints || 0) +
+            (this.publicMilesPoints || 0) +
+            (this.planeMilesPoints || 0) +
+            (this.recycle.recyclePoints || 0);
+    
         console.log(`Computed total: ${this.total}`); // Debugging line
-    return this.total; // Ensure `this.total` is assigned
-        }
+        return this.total; // Ensure `this.total` is assigned
+    }
     }
 
 export {FP}

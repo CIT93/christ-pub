@@ -45,12 +45,15 @@ const renderTblBtn = (obj, index, data) => {
         form[8].value = obj.washingMachine
         form[9].value = obj.makePurchases
         form[10].value = obj.producingWaste
-        form[11].checked = obj.recycle.glass
-        form[12].checked = obj.recycle.plastic
-        form[13].checked = obj.recycle.paper
-        form[14].checked = obj.recycle.aluminum
-        form[15].checked = obj.recycle.steel
-        form[16].checked = obj.recycle.food
+        form[11].value = obj.personalTrans
+        form[12].value = obj.publicTrans
+        form[13].value = obj.planeDistance
+        form[14].checked = obj.recycle.glass
+        form[15].checked = obj.recycle.plastic
+        form[16].checked = obj.recycle.paper
+        form[17].checked = obj.recycle.aluminum
+        form[18].checked = obj.recycle.steel
+        form[19].checked = obj.recycle.food
 
         onUpdate(index, data);
     })
@@ -61,7 +64,7 @@ const renderTblBody = data => {
     const tbody = document.createElement("tbody");
     data.forEach((obj, index) =>{
         const tr = document.createElement("tr");
-        const keys = ["first", "houseMembers", "houseSize", "houseFood","housePackage", "dishWasher", "washingMachine", "makePurchases","producingWaste", "total"]
+        const keys = ["first", "total"]
         keys.forEach(key =>{
             const td = document.createElement("td");
                 td.textContent = obj[key];
